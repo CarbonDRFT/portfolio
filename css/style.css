@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  font-family: "jura", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mouse__circle,
+.mouse__dot {
+  border-radius: 50%;
+  position: fixed;
+  z-index: 100;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.mouse__circle {
+  width: 6rem;
+  height: 6rem;
+  border: 0.1rem solid #c7a622;
+  animation: mouseCircleAnim 10s infinite linear;
+}
+
+@keyframes mouseCircleAnim {
+  0% {
+    width: 6rem;
+    height: 6rem;
+  }
+  25% {
+    width: 8rem;
+    height: 8rem;
+  }
+  35% {
+    width: 4rem;
+    height: 4rem;
+  }
+  70% {
+    width: 8rem;
+    height: 8rem;
+  }
+  100% {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+.mouse__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: #9b0e0e;
+  animation: mouseDotAnim 10s infinite linear;
+}
+
+@keyframes mouseDotAnim {
+  0% {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+  55% {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  100% {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+/*Page BG */
+.page__bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(/img/bg.jpg) center no-repeat;
+  background-size: cover;
+}
+
+/*End of Page BG */
+
+/* Section 1 */
+.section__1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.logo {
+  position: absolute;
+  inset: 2rem 0 0 5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+/* End of Logo */
+
+/* Animated Circles */
+
+.circles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.circle {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  background-color: red;
+  align-self: center;
+  justify-self: center;
+  opacity: 0.6;
+}
+
+.circle-1 {
+  background: url(/img/landing/circle-1-img.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem dotted #a14b1a;
+}
+.circle-2 {
+  background: url(/img/landing/circle-2-img.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.5rem dashed #ffbd07;
+}
+.circle-3 {
+  background: url(/img/landing/circle-3-img.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 1rem double #9b0e0e;
+}
+.circle-4 {
+  background: url(/img/landing/circle-4-img.jpg) center no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+  border: 0.7rem double #fff;
+}
+
+.main__circle {
+  width: 55rem;
+  height: 55rem;
+  position: absolute;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.main__circle img {
+  mix-blend-mode: color-dodge;
+  position: relative;
+}
+
+/* */
+/*Featured text */
+
+.featured__text {
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  width: 0;
+  word-wrap: break-word;
+  line-height: 3.5;
+  position: sticky;
+  top: 0;
+}
+
+.featured__text-1 {
+  margin: 0 auto 0 10rem;
+}
+.featured__text-2 {
+  margin: 0 10rem 0 auto;
+}
+/* */
+/* */
+/* */
