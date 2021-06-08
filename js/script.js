@@ -109,7 +109,7 @@ const container = document.querySelector(".container");
 const projects = document.querySelectorAll(".project");
 const projectHideBtn = document.querySelector(".project__hide--btn");
 
-projects.forEach((project) => {
+projects.forEach((project, i) => {
   project.addEventListener("mouseenter", () => {
     project.firstElementChild.style.top = `-${
       project.firstElementChild.offsetHeight - project.offsetHeight + 20
@@ -142,5 +142,36 @@ projects.forEach((project) => {
     };
   });
   // End of Big projects image
+
+  i >= 6 && (project.style.cssText = "display: none; opacity:0");
+});
+
+//Project Button
+const projectBtn = document.querySelector(".projects__btn");
+const projectBtnText = document.querySelector(".projects__btn span");
+
+let showHideBool = true;
+
+projectBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  projectBtn.firstElementChild.nextElementSibling.classList.toggle("change");
+
+  projects.forEach((project, i) => {
+    if (i >= 6) {
+      if (showHideBool) {
+        project.style.display = "flex";
+        project.style.opacity = "1";
+
+        projectBtnText.textContent = "Show Less";
+      } else {
+        project.style.display = "none";
+        project.style.opacity = "0";
+
+        projectBtnText.textContent = "Show More";
+      }
+    }
+  });
+  showHideBool = !showHideBool;
 });
 // End of projects
