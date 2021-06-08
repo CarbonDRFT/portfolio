@@ -20,6 +20,91 @@ html {
   align-items: center;
 }
 
+/*  Main Button */
+
+.main__btn {
+  position: absolute;
+  bottom: 3rem;
+  width: 13rem;
+  height: 13rem;
+  background-color: #9b0e0e;
+  border-radius: 50%;
+  border: 0.2rem dotted #fff;
+  padding: 0.1rem;
+  overflow: hidden;
+}
+
+.main__btn--content {
+  width: 100%;
+  height: 100%;
+  border: 0.2rem dotted #e7be08;
+  border-radius: 50%;
+  transform: rotate(40deg);
+  transition: transform 0.8s border 0.8s;
+}
+
+.main__btn:hover .main__btn--content {
+  transform: rotate(60deg);
+  border: 0.2rem dotted #9b0e0e;
+  transition: transform 0.2s 0.5s border 0.2s;
+}
+
+.main__btn--line {
+  position: absolute;
+  top: 4rem;
+  width: 3rem;
+  height: 0.5rem;
+  border: 0.1rem solid #fff;
+}
+
+.main__btn--line:nth-child(1) {
+  transform: rotateZ(-45deg) translateX(-0.65rem);
+  transform-origin: left center;
+  border-right: none;
+}
+.main__btn--line:nth-child(2) {
+  transform: rotateZ(45deg) translateX(0.65rem);
+  transform-origin: right center;
+  border-left: none;
+}
+.main__btn--line:nth-child(3) {
+  transform: rotateZ(90deg) translateX(0.5rem);
+  border-left: none;
+}
+
+.main__btn span {
+  position: absolute;
+  bottom: 3rem;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.ripple {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: #e7be08;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: rippleAnim 0.5s forwards;
+}
+
+@keyframes rippleAnim {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 210%;
+    height: 210%;
+  }
+}
+
+/* End og Main Button*/
+
 a {
   text-decoration: none;
 }
@@ -212,58 +297,206 @@ a {
 }
 /* */
 
-/*  Main Button */
-
-.main__btn {
-  position: absolute;
-  bottom: 3rem;
-  width: 13rem;
-  height: 13rem;
-  background-color: #9b0e0e;
-  border-radius: 50%;
-  border: 0.2rem dotted #fff;
-  padding: 0.1rem;
+/* Section2 */
+.section-2 {
+  position: relative;
+  padding: 10rem 10rem 15rem 10rem;
 }
 
-.main__btn--content {
+.section-2__heading {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 10rem;
+  transform: translateY(-50%);
+  width: 0;
+  word-break: break-all;
+  color: #fff;
+  line-height: 4;
+}
+
+/* About me text */
+.about__me--text {
+  font-family: "poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #aaa;
+  position: relative;
+  width: 80%;
+  margin: auto;
+}
+
+@keyframes aboutMeTextAnim {
+  0% {
+    color: #aaa;
+    top: 0;
+  }
+  10%,
+  90% {
+    color: #c7a622;
+    top: 2rem;
+  }
+  100% {
+    color: #aaa;
+    top: 0;
+  }
+}
+/* End of About me text */
+
+/* Section 2 Main button */
+.section-2 .main__btn {
+  left: 50%;
+  bottom: -5rem;
+  transform: translateX(-50%);
+}
+
+/* End of Section 2 Main button */
+/* End of Section2 */
+
+/* Section 3 */
+.section-3 {
   width: 100%;
   height: 100%;
-  border: 0.2rem dotted #e7be08;
-  border-radius: 50%;
-  transform: rotate(40deg);
+  padding: 10rem 0;
+  margin-top: 10rem;
+  position: relative;
 }
 
-.main__btn--line {
+/* Projects */
+.projects {
+  flex-wrap: wrap;
+  padding-bottom: 15rem;
+}
+
+.project {
+  width: 40rem;
+  height: 45rem;
+  overflow: hidden;
+  margin: 5rem;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border: 0.2rem dotted #9b0e0e;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  perspective: 20rem;
+}
+
+.project img {
+  width: 90%;
+  object-fit: cover;
   position: absolute;
-  top: 4rem;
-  width: 3rem;
-  height: 0.5rem;
-  border: 0.1rem solid #fff;
+  top: 2rem;
+  opacity: 0.5;
+  transition: top 4s 0.2s, opacity 0.2s;
 }
 
-.main__btn--line:nth-child(1) {
-  transform: rotateZ(-45deg) translateX(-0.65rem);
-  transform-origin: left center;
-  border-right: none;
-}
-.main__btn--line:nth-child(2) {
-  transform: rotateZ(45deg) translateX(0.65rem);
-  transform-origin: right center;
-  border-left: none;
-}
-.main__btn--line:nth-child(3) {
-  transform: rotateZ(90deg) translateX(0.5rem);
-  border-left: none;
+.project:nth-child(odd):hover img {
+  animation: oddImgAnim 4s 0.2s;
+  opacity: 1;
 }
 
-.main__btn span {
-  position: absolute;
-  bottom: 3rem;
+@keyframes oddImgAnim {
+  0% {
+    transform: rotateY(0);
+  }
+  25% {
+    transform: rotateY(-2deg) rotateX(2deg);
+  }
+  50% {
+    transform: rotateY(2deg) rotateX(-2deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+
+.project:nth-child(even):hover img {
+  animation: evenImgAnim 4s 0.2s;
+  opacity: 1;
+}
+
+@keyframes evenImgAnim {
+  0% {
+    transform: rotateY(0);
+  }
+  25% {
+    transform: rotateY(2deg) rotateX(-2deg);
+  }
+  50% {
+    transform: rotateY(-2deg) rotateX(2deg);
+  }
+  100% {
+    transform: rotateY(0);
+  }
+}
+
+/* Big project img */
+.project__img--wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden scroll;
+  animation: imgWrapperAnim 1s forwards;
+}
+
+@keyframes imgWrapperAnim {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+.project__img {
+  width: 100%;
+  border-radius: 0.5rem;
+  padding: 7rem 20rem;
+  opacity: 0.9;
+  transform-origin: top center;
+  animation: imgAnim 1s 1s both;
+}
+
+@keyframes imgAnim {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* End of Big project img */
+
+/* Project Hide Button*/
+.project__hide--btn {
+  position: fixed;
+  top: 5rem;
+  right: 5rem;
+  background-color: transparent;
+  border: none;
   color: #fff;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  z-index: 10;
+  transform: scale(0);
+  visibility: hidden;
 }
 
-/* End og Main Button*/
+.change.project__hide--btn {
+  transform: scale(1);
+  visibility: visible;
+  transition: transform 0.5s;
+}
+
+/* End of Project Hide Button*/
+
+/* End of Projects */
+/* End of Section 3 */
