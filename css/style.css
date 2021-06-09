@@ -193,7 +193,7 @@ a {
 .page__bg {
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url(/img/bg.jpg) center no-repeat;
   background-size: cover;
@@ -702,6 +702,25 @@ a {
   font-size: 1.8rem;
   color: #fff;
 }
+
+/*Form Validation*/
+.message {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: red;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 0 auto 1rem 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.error.message {
+  visibility: visible;
+  opacity: 1;
+}
+/*End of Form validation*/
 /*End of form*/
 
 /*Slideicon*/
