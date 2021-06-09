@@ -20,8 +20,25 @@
       <div class="page__bg"></div>
       <!-- End of page container -->
 
+      <!-- Navigation -->
+      <!-- Menu Icon -->
+      <div class="menu__icon center sticky">
+        <div class="menu__icon--line"></div>
+        <div class="menu__icon--line"></div>
+      </div>
+      <!-- End of Menu Icon -->
+
+      <nav class="navbar">
+        <a href="#section-1" class="navbar__link">Home</a>
+        <a href="#section-2" class="navbar__link">About Me</a>
+        <a href="#section-3" class="navbar__link">Projects</a>
+        <a href="#section-4" class="navbar__link">Services</a>
+        <a href="#section-5" class="navbar__link">Contact</a>
+      </nav>
+      <!-- End of Navigation-->
+
       <!-- Section 1 -->
-      <section class="section__1 center">
+      <section class="section__1 center" id="section-1">
         <!-- Logo -->
         <a href="#" class="logo">Danier Valiev Portfolio</a>
 
@@ -57,9 +74,9 @@
       <!-- End of Section 1 -->
 
       <!-- Section 2-->
-      <section class="section-2">
+      <section class="section-2" id="section-2">
         <!-- Section 2 Heading-->
-        <h1 class="section-2__heading">About Me</h1>
+        <h1 class="section__heading">About Me</h1>
         <!-- End of Section 2 Heading-->
 
         <!-- About Me Text-->
@@ -80,41 +97,41 @@
       <!-- End of Section 2-->
 
       <!-- Section 3-->
-      <section class="section-3">
+      <section class="section-3" id="section-3">
         <!-- Section3 Heading -->
-        <h1 class="section-3__heading">My Work</h1>
+        <h1 class="section__heading">My Projects</h1>
         <!-- End of Section3 Heading -->
 
         <!-- Projects -->
         <div class="projects center">
-          <div class="project">
+          <div class="project pointer__enter">
             <img src="/img/projects/project-1.jpg" alt="" />
           </div>
-          <div class="project">
+          <div class="project pointer__enter">
             <img src="/img/projects/project-2.jpg" alt="" />
           </div>
-          <div class="project">
+          <div class="project pointer__enter">
             <img src="/img/projects/project-3.jpg" alt="" />
           </div>
-          <div class="project">
+          <div class="project pointer__enter">
             <img src="/img/projects/project-4.jpg" alt="" />
           </div>
-          <div class="project">
+          <div class="project pointer__enter">
             <img src="/img/projects/project-5.jpg" alt="" />
           </div>
-          <div class="project">
+          <div class="project pointer__enter">
             <img src="/img/projects/project-6.jpg" alt="" />
           </div>
-          <div class="project">
+          <div class="project pointer__enter">
             <img src="/img/projects/project-7.jpg" alt="" />
           </div>
-          <div class="project">
+          <div class="project pointer__enter">
             <img src="/img/projects/project-8.jpg" alt="" />
           </div>
-          <div class="project">
+          <div class="project pointer__enter">
             <img src="/img/projects/project-9.jpg" alt="" />
           </div>
-          <div class="project">
+          <div class="project pointer__enter">
             <img src="/img/projects/project-10.jpg" alt="" />
           </div>
         </div>
@@ -136,6 +153,130 @@
         <!-- End of Project Button -->
       </section>
       <!-- End of Section 3-->
+
+      <!-- Section 4-->
+      <section class="section-4" id="section-4">
+        <h1 class="section__heading">Services</h1>
+        <div class="services__wrapper center">
+          <div class="service">
+            <a href="" class="service__btn"><span>UI/UX</span></a>
+            <p class="service__text">
+              Landing Pages, User Flow, Wireframing Prototyping, Mobile App,
+              Design, Web App
+            </p>
+          </div>
+          <div class="service">
+            <a href="" class="service__btn"><span>HTML / CSS</span></a>
+            <p class="service__text">
+              I can work with HTML and CSS. I am now confident with CSS and try
+              to become fluent. I read and stay up to date.
+            </p>
+          </div>
+          <div class="service">
+            <a href="" class="service__btn"><span>JAVASCRIPT</span></a>
+            <p class="service__text">
+              Basic to mid-advanced understanding of Javascript. Still a
+              language I work a lot with to learn and stay up to date.
+            </p>
+          </div>
+          <div class="service">
+            <a href="" class="service__btn"><span>WORDPRESS</span></a>
+            <p class="service__text">
+              Experienced in Wordpress. I can setup anything from single page to
+              woocommerence website
+            </p>
+          </div>
+          <div class="service">
+            <a href="" class="service__btn"><span>MARKETING</span></a>
+            <p class="service__text">
+              I can work with Google Analytics, Google Ads, Google Search
+              Console, Email Marketing using Mailchimp or thru any CRM system
+              and got knowledge in different marketing tools.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- End of Section 4-->
+
+      <!-- Section 5-->
+      <section class="section-5 center" id="section-5">
+        <h1 class="section__heading">Contact Me</h1>
+
+        <!-- Form -->
+        <div class="form__wrapper">
+          <h2 class="form__heading">Let't Talk</h2>
+          <form action="" class="contact__form center">
+            <input
+              type="text"
+              class="contact__form--input"
+              placeholder="Name"
+            />
+            <input
+              type="email"
+              class="contact__form--input"
+              placeholder="Email"
+            />
+            <input
+              type="text"
+              class="contact__form--input"
+              placeholder="Subject"
+            />
+            <textarea
+              class="contact__form--input contact__form--textarea"
+              placeholder="Message"
+            ></textarea>
+            <input
+              type="submit"
+              class="form__submit--btn"
+              value="Send Request"
+            />
+          </form>
+        </div>
+        <!-- End of Form -->
+
+        <!-- Slideicon-->
+        <div class="slideicon">
+          <a href="#" class="slideicon__link">
+            <img
+              src="/img/icons/slideshow-img-1.png"
+              alt="twitter"
+              title="twitter"
+            />
+          </a>
+          <a href="#" class="slideicon__link">
+            <img
+              src="/img/icons/slideshow-img-2.png"
+              alt="twitter"
+              title="twitter"
+            />
+          </a>
+          <a href="#" class="slideicon__link light">
+            <img
+              src="/img/icons/slideshow-img-3.png"
+              alt="facebook"
+              title="facebook"
+            />
+          </a>
+          <a href="#" class="slideicon__link">
+            <img
+              src="/img/icons/slideshow-img-4.png"
+              alt="instagram"
+              title="instagram"
+            />
+          </a>
+          <a href="#" class="slideicon__link">
+            <img
+              src="/img/icons/slideshow-img-5.png"
+              alt="email"
+              title="email"
+            />
+          </a>
+        </div>
+        <!-- End of Slideicon-->
+      </section>
+      <!-- End of Section 5-->
+      <!-- Section 6-->
+      <!-- End of Section 6-->
     </div>
     <!-- End of Page container -->
 

@@ -1,9 +1,35 @@
+// Navigation
+
+const menuIcon = document.querySelector(".menu__icon");
+const navbar = document.querySelector(".navbar");
+
+document.addEventListener("scroll", () => {
+  menuIcon.classList.add("show__menu--icon");
+  navbar.classList.add("hide__navbar");
+
+  if (window.scrollY === 0) {
+    menuIcon.classList.remove("show__menu--icon");
+    navbar.classList.remove("hide__navbar");
+  }
+});
+
+menuIcon.addEventListener("click", () => {
+  menuIcon.classList.remove("show__menu--icon");
+  navbar.classList.remove("hide__navbar");
+});
+
+//End of Navigation
+
 //Mouse Circle
 const mouseCircle = document.querySelector(".mouse__circle");
 const mouseDot = document.querySelector(".mouse__dot");
 
+let mouseCircleBool = true;
+
 const mouseCircleFn = (x, y) => {
-  mouseCircle.style.cssText = `top: ${y}px; left: ${x}px; opacity: 1`;
+  mouseCircleBool &&
+    (mouseCircle.style.cssText = `top: ${y}px; left: ${x}px; opacity: 1`);
+
   mouseDot.style.cssText = `top: ${y}px; left: ${x}px; opacity: 1`;
 };
 
@@ -47,12 +73,66 @@ const animateCircles = (e, x, y) => {
 };
 // End of Animated circles
 
+let hoveredElPosition = [];
+
+const stickyElement = (x, y, hoveredEl) => {
+  // Sticky Element
+
+  if (hoveredEl.classList.contains("sticky")) {
+    if (hoveredElPosition.length < 1) {
+      hoveredElPosition = [hoveredEl.offsetTop, hoveredEl.offsetLeft];
+    }
+    console.log(hoveredElPosition);
+    hoveredEl.style.cssText = `top: ${y}px; left: ${x}px`;
+
+    if (
+      hoveredEl.offsetTop <= hoveredElPosition[0] - 100 ||
+      hoveredEl.offsetTop >= hoveredElPosition[0] + 100 ||
+      hoveredEl.offsetLeft <= hoveredElPosition[1] - 100 ||
+      hoveredEl.offsetLeft >= hoveredElPosition[1] + 100
+    ) {
+      hoveredEl.style.cssText = "";
+      hoveredElPosition = [];
+    }
+
+    hoveredEl.onmouseleave = () => {
+      hoveredEl.style.cssText = "";
+      hoveredElPosition = [];
+    };
+  }
+  // End of Sticky Element
+};
+
+// Mouse circle transfrom
+const mouseCircleTransform = (hoveredEl) => {
+  if (hoveredEl.classList.contains("pointer__enter")) {
+    hoveredEl.onmousemove = () => {
+      mouseCircleBool = false;
+      mouseCircle.style.cssText = `
+      width: ${hoveredEl.getBoundingClientRect().width}px;
+      height: ${hoveredEl.getBoundingClientRect().height}px;
+      top: ${hoveredEl.getBoundingClientRect().top}px;
+      left: ${hoveredEl.getBoundingClientRect().left}px;
+      opacity: 1; 
+      transform: translate(0, 0)`;
+    };
+  }
+};
+
+// End of Mouse Circle Transform
+
 document.body.addEventListener("mousemove", (e) => {
   let x = e.clientX;
   let y = e.clientY;
 
   mouseCircleFn(x, y);
   animateCircles(e, x, y);
+
+  const hoveredEl = document.elementFromPoint(x, y);
+
+  stickyElement(x, y, hoveredEl);
+
+  mouseCircleTransform(hoveredEl);
 });
 
 document.body.addEventListener("mouseleave", () => {
@@ -147,34 +227,116 @@ projects.forEach((project, i) => {
 });
 
 //Project Button
+const section3 = document.querySelector(".section-3");
 const projectBtn = document.querySelector(".projects__btn");
 const projectBtnText = document.querySelector(".projects__btn span");
 
 let showHideBool = true;
+
+const showProjects = (project, i) => {
+  setTimeout(() => {
+    project.style.display = "flex";
+    section3.scrollIntoView({ block: "end" });
+  }, 600);
+
+  setTimeout(() => {
+    project.style.opacity = "1";
+  }, i * 200);
+};
+
+const hideProjects = (project, i) => {
+  setTimeout(() => {
+    project.style.display = "none";
+    section3.scrollIntoView({ block: "end" });
+  }, 1200);
+  setTimeout(() => {
+    project.style.opacity = "0";
+  }, i * 100);
+};
 
 projectBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   projectBtn.firstElementChild.nextElementSibling.classList.toggle("change");
 
+  showHideBool
+    ? (projectBtnText.textContent = "Show Less")
+    : (projectBtnText.textContent = "Show More");
+
   projects.forEach((project, i) => {
-    if (i >= 6) {
-      if (showHideBool) {
-        setTimeout(() => {
-          project.style.display = "flex";
-        }, 600);
-
-        project.style.opacity = "1";
-
-        projectBtnText.textContent = "Show Less";
-      } else {
-        project.style.display = "none";
-        project.style.opacity = "0";
-
-        projectBtnText.textContent = "Show More";
-      }
-    }
+    i >= 6 &&
+      (showHideBool ? showProjects(project, i) : hideProjects(project, i));
   });
   showHideBool = !showHideBool;
 });
 // End of projects
+
+// Section 4
+document.querySelectorAll(".service__btn").forEach((service) => {
+  service.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const serviceText = service.nextElementSibling;
+    serviceText.classList.toggle("change");
+
+    const rightPosition = serviceText.classList.contains("change")
+      ? `calc(100% - ${getComputedStyle(service.firstElementChild).width})`
+      : 0;
+
+    service.firstElementChild.style.right = rightPosition;
+  });
+});
+// End of Section 4
+
+//Section 5
+//Form
+const formHeading = document.querySelector(".form__heading");
+const formInput = document.querySelectorAll(".contact__form--input");
+
+formInput.forEach((input) => {
+  input.addEventListener("focus", () => {
+    formHeading.style.opacity = "0";
+    setTimeout(() => {
+      formHeading.textContent = `Your ${input.placeholder}`;
+      formHeading.style.opacity = "1";
+    }, 300);
+  });
+
+  input.addEventListener("blur", () => {
+    formHeading.style.opacity = "0";
+    setTimeout(() => {
+      formHeading.textContent = `Let's Talk`;
+      formHeading.style.opacity = "1";
+    }, 300);
+  });
+});
+//End of Form
+
+// SlideIcon
+const slideicon = document.querySelector(".slideicon");
+
+setInterval(() => {
+  const firstIcon = slideicon.firstElementChild;
+
+  firstIcon.classList.add("faded__out");
+
+  const thirdIcon = slideicon.children[3];
+
+  thirdIcon.classList.add("light");
+
+  thirdIcon.previousElementSibling.classList.remove("light");
+
+  setTimeout(() => {
+    slideicon.removeChild(firstIcon);
+
+    slideicon.appendChild(firstIcon);
+
+    setTimeout(() => {
+      firstIcon.classList.remove("faded__out");
+    }, 500);
+  }, 500);
+}, 3000);
+
+//End of SlideIcon
+
+// End of Section 5
