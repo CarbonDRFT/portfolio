@@ -114,7 +114,20 @@ const mouseCircleTransform = (hoveredEl) => {
       top: ${hoveredEl.getBoundingClientRect().top}px;
       left: ${hoveredEl.getBoundingClientRect().left}px;
       opacity: 1; 
-      transform: translate(0, 0)`;
+      transform: translate(0, 0);
+      animation: none;
+      border-radius: ${getComputedStyle(hoveredEl).borderBottomLeftRadius};
+      transition: width .5s, height .5s, top .5s, left .5s, transform .5s, border-radius .5s;`;
+    };
+
+    hoveredEl.onmouseleave = () => {
+      mouseCircleBool = true;
+    };
+
+    document.onscroll = () => {
+      if (!mouseCircleBool) {
+        mouseCircle.style.top = `${hoveredEl.getBoundingClientRect().top}px`;
+      }
     };
   }
 };
@@ -212,6 +225,8 @@ projects.forEach((project, i) => {
     bigImg.setAttribute("src", `${imgPath}-big.jpg`);
     bigImgWrapper.appendChild(bigImg);
     document.body.style.overflowY = "hidden";
+
+    mouseCircle.style.opacity = 0;
 
     projectHideBtn.classList.add("change");
 
