@@ -160,7 +160,10 @@ projectBtn.addEventListener("click", (e) => {
   projects.forEach((project, i) => {
     if (i >= 6) {
       if (showHideBool) {
-        project.style.display = "flex";
+        setTimeout(() => {
+          project.style.display = "flex";
+        }, 600);
+
         project.style.opacity = "1";
 
         projectBtnText.textContent = "Show Less";
