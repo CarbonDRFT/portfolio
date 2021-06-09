@@ -888,6 +888,16 @@ a {
   html {
     font-size: 40%;
   }
+
+  b .main__circle {
+    width: 30rem;
+    height: 30rem;
+  }
+
+  .main__circle:hover {
+    width: 35rem;
+    height: 35rem;
+  }
   .main__circle img {
     width: 200%;
     height: 200%;
@@ -922,6 +932,10 @@ a {
 
   .section-2 {
     padding: 5rem 0;
+  }
+
+  .about__me--text {
+    margin-bottom: 5rem;
   }
 }
 
