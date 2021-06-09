@@ -901,8 +901,8 @@ a {
     height: 35rem;
   }
   .main__circle img {
-    width: 190%;
-    height: 190%;
+    width: 160%;
+    height: 160%;
     mix-blend-mode: color-dodge;
   }
 
