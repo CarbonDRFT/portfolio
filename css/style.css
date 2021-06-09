@@ -336,6 +336,7 @@ a {
   width: 55rem;
   height: 55rem;
   position: absolute;
+  background-size: cover;
   overflow: hidden;
   border-radius: 50%;
   transition: width 0.2s, height 0.2s;
@@ -761,8 +762,8 @@ a {
   }
 
   .main__circle img {
-    width: 160%;
-    height: 160%;
+    width: 180%;
+    height: 180%;
   }
 
   .about__me--text span {
@@ -936,6 +937,14 @@ a {
 
   .about__me--text {
     margin-bottom: 5rem;
+  }
+
+  .projects {
+    padding-bottom: 10rem;
+  }
+
+  .section-4 {
+    margin-top: 5rem;
   }
 }
 

@@ -222,7 +222,7 @@ projects.forEach((project, i) => {
     const bigImg = document.createElement("img");
     bigImg.className = "project__img";
     const imgPath = project.firstElementChild.getAttribute("src").split(".")[0];
-    bigImg.setAttribute("src", `${imgPath}-big.jpg`);
+    bigImg.setAttribute("src", `${imgPath}-big.png`);
     bigImgWrapper.appendChild(bigImg);
     document.body.style.overflowY = "hidden";
 
