@@ -764,6 +764,7 @@ a {
   .main__circle img {
     width: 180%;
     height: 180%;
+    mix-blend-mode: color-dodge;
   }
 
   .about__me--text span {
@@ -900,8 +901,9 @@ a {
     height: 35rem;
   }
   .main__circle img {
-    width: 200%;
-    height: 200%;
+    width: 190%;
+    height: 190%;
+    mix-blend-mode: color-dodge;
   }
 
   .service__text {
