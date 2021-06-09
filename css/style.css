@@ -304,28 +304,28 @@ a {
 }
 
 .circle-1 {
-  background: url(/img/landing/circle-1-img.jpg) center no-repeat;
+  background: url(/img/landing/circle-1-img.png) center no-repeat;
   background-size: cover;
   background-clip: content-box;
   border: 0.5rem dotted #a14b1a;
   margin-left: -10%;
 }
 .circle-2 {
-  background: url(/img/landing/circle-2-img.jpg) center no-repeat;
+  background: url(/img/landing/circle-2-img.png) center no-repeat;
   background-size: cover;
   background-clip: content-box;
-  border: 0.5rem dashed #ffbd07;
+  border: 0.5rem dashed #1d96ce;
   margin-right: -10%;
 }
 .circle-3 {
-  background: url(/img/landing/circle-3-img.jpg) center no-repeat;
+  background: url(/img/landing/circle-3-img.png) center no-repeat;
   background-size: cover;
   background-clip: content-box;
-  border: 1rem double #9b0e0e;
+  border: 1rem double #e7be08;
   margin-left: -10%;
 }
 .circle-4 {
-  background: url(/img/landing/circle-4-img.jpg) center no-repeat;
+  background: url(/img/landing/circle-4-img.png) center no-repeat;
   background-size: cover;
   background-clip: content-box;
   border: 0.7rem double #fff;
