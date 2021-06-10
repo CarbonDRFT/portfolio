@@ -1,0 +1,25 @@
+/* Style */
+
+@import url(/css/style.css);
+
+/* Partials */
+
+@import url(/css/partials/nav.css);
+@import url(/css/partials/landing.css);
+@import url(/css/partials/aboutme.css);
+@import url(/css/partials/projects.css);
+@import url(/css/partials/skills.css);
+@import url(/css/partials/contact.css);
+@import url(/css/partials/slider.css);
+@import url(/css/partials/responsive.css);
+
+/* Font Style */
+
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap");
+
+/* Font family: 
+
+font-family: "Jura", sans-serif; 
+font-family: "Poppins", sans-serif; 
+*/

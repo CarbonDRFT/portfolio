@@ -1,0 +1,44 @@
+/* Section2 */
+.section-2 {
+  position: relative;
+  padding: 10rem 10rem 15rem 10rem;
+}
+
+/* About me text */
+.about__me--text {
+  font-family: "poppins", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #aaa;
+  position: relative;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+@keyframes aboutMeTextAnim {
+  0% {
+    color: #aaa;
+    top: 0;
+  }
+  10%,
+  90% {
+    color: #c7a622;
+    top: 2rem;
+  }
+  100% {
+    color: #aaa;
+    top: 0;
+  }
+}
+/* End of About me text */
+
+/* Section 2 Main button */
+.section-2 .main__btn {
+  left: 50%;
+  bottom: -5rem;
+  transform: translateX(-50%);
+}
+
+/* End of Section 2 Main button */
+/* End of Section2 */

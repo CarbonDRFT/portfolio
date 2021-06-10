@@ -1,0 +1,37 @@
+/*Navbar*/
+.navbar {
+  position: fixed;
+  top: 2.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 3rem;
+  z-index: 100;
+  transition: opacity 0.5s, visibility 0.5s, transform 0.5s;
+}
+
+.navbar__link {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0 2.25rem;
+  text-shadow: 0.3rem 0.5rem #000;
+}
+
+.hide__navbar {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10rem);
+}
+/*End of Navbar*/
+/*End of Navigation*/
+
+.logo {
+  position: absolute;
+  inset: 2rem 0 0 5rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+}
+/* End of Logo */

@@ -1,0 +1,47 @@
+/*Slideicon*/
+.slideicon {
+  display: flex;
+  width: 50rem;
+  margin-top: 10rem;
+  padding: 0 2rem;
+}
+
+.slideicon__link {
+  width: 20%;
+  filter: brightness(0.5);
+  transition: filter 1.5s;
+}
+
+.slideicon__link:nth-child(1),
+.slideicon__link:nth-child(5) {
+  transition: width 0.5s, opacity 0.5s;
+}
+
+.slideicon__link:nth-child(3) {
+  transition: filter 0.5s;
+}
+
+.slideicon__link img {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.faded__out {
+  opacity: 0;
+  width: 0;
+}
+
+.light {
+  filter: brightness(1.5);
+}
+/*End of Slideicon*/
+
+.copyright {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  margin-top: 8rem;
+  margin-bottom: 2rem;
+}
+
+/*End of Section 5*/
