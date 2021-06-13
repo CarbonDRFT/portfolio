@@ -1,3 +1,9 @@
+:root {
+  --maincolor: #9b0e0e;
+  --secondColor: #c7a622;
+  --grey: rgb(182, 182, 182);
+}
+
 /* Section 3 */
 .section-3 {
   width: 100%;
@@ -25,7 +31,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  border: 0.2rem dotted #9b0e0e;
+  border: 0.2rem dotted var(--maincolor);
   border-radius: 0.5rem;
   cursor: pointer;
   perspective: 20rem;

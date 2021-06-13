@@ -1,3 +1,9 @@
+:root {
+  --maincolor: #9b0e0e;
+  --secondColor: #c7a622;
+  --grey: rgb(182, 182, 182);
+}
+
 /*Section 4*/
 .section-4 {
   position: relative;
@@ -14,7 +20,7 @@
 .service {
   width: 70%;
   margin: 2rem 0;
-  border-bottom: 0.5rem solid #9b0e0e;
+  border-bottom: 0.5rem solid var(--maincolor);
 }
 
 .service__btn {
@@ -29,7 +35,7 @@
   font-size: 3.5rem;
   font-style: italic;
   font-weight: bold;
-  color: #9b0e0e;
+  color: var(--maincolor);
   position: absolute;
   right: 0;
   pointer-events: none;
@@ -38,7 +44,7 @@
 
 .service__text {
   font-size: 2.5rem;
-  color: #aaa;
+  color: var(--grey);
   letter-spacing: 0.1rem;
   height: 0;
   visibility: hidden;

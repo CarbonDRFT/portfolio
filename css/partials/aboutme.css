@@ -1,3 +1,9 @@
+:root {
+  --maincolor: #9b0e0e;
+  --secondColor: #c7a622;
+  --grey: rgb(182, 182, 182);
+}
+
 /* Section2 */
 .section-2 {
   position: relative;
@@ -9,7 +15,7 @@
   font-family: "poppins", sans-serif;
   font-size: 2rem;
   font-weight: 400;
-  color: #aaa;
+  color: var(--grey);
   position: relative;
   width: 80%;
   margin: auto;
@@ -23,7 +29,7 @@
   }
   10%,
   90% {
-    color: #c7a622;
+    color: var(--secondColor);
     top: 2rem;
   }
   100% {

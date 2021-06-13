@@ -1,3 +1,9 @@
+:root {
+  --maincolor: #9b0e0e;
+  --secondColor: #c7a622;
+  --grey: rgb(182, 182, 182);
+}
+
 /*Section 5*/
 .section-5 {
   position: relative;
@@ -10,7 +16,7 @@
   font-family: "Poppins", sans-serif;
   font-size: 4rem;
   font-weight: 400;
-  color: #9b0e0e;
+  color: var(--maincolor);
   letter-spacing: 0.3;
   margin-bottom: 3rem;
   transition: opacity 0.3s;
@@ -25,10 +31,10 @@
   padding: 0.5rem;
   margin: 1rem 0;
   background-color: rgba(255, 255, 255, 0.1);
-  border: 0.1rem solid #9b0e0e;
+  border: 0.1rem solid var(--maincolor);
   font-size: 1.6rem;
   font-weight: bold;
-  color: #aaa;
+  color: var(--grey);
   letter-spacing: 0.1rem;
   height: 5rem;
 }
@@ -41,7 +47,7 @@
 .form__submit--btn {
   width: 20rem;
   height: 5rem;
-  background-color: #9b0e0e;
+  background-color: var(--maincolor);
   border: none;
   align-self: flex-start;
   font-size: 1.8rem;
